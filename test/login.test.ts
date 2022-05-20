@@ -1,14 +1,14 @@
-import { LoginPage } from "../src/login.page"
+import { LoginPage } from '../src/login.page'
 
-const { Builder, By, Key, until } = require('selenium-webdriver')
-var chai = require('chai');
-var expect = chai.expect;
+import { Builder, until } from 'selenium-webdriver'
+const chai = require('chai')
+const expect = chai.expect
 
 describe('Login', function () {
   let driver
 
   beforeEach(async function () {
-    driver = await new Builder().forBrowser('MicrosoftEdge').build()
+    driver = await new Builder().forBrowser('chrome').build()
   })
 
   describe('Valid user', function () {
