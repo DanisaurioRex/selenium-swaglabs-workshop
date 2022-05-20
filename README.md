@@ -2,6 +2,8 @@
 
 Self-Study project to update knowledge about:
 
+ - Page Object Model
+ - Dependency Injection
  - Node
  - Selenium
  - Mocha
