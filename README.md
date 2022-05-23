@@ -5,10 +5,12 @@ Self-Study project to update knowledge about:
  - Page Object Model
  - Dependency Injection
  - Node
+ - Node-config
  - Selenium
  - Mocha
  - Chai
  - ESLint
+ - Mochawesome
 
 # Installation
 
@@ -23,3 +25,7 @@ Self-Study project to update knowledge about:
 ## Execute Tests
 
 `npm test`
+
+## Reports
+
+After the test execution, a HTML report is storage on [reports\mochawesome.html](/reports/mochawesome.html)

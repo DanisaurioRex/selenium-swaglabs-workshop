@@ -1,12 +1,10 @@
 import { LoginPage } from '../src/pages/login.page'
-import { IDriver } from '../src/domain/driver.interface'
-
-import { until } from 'selenium-webdriver'
+import { IDriver } from '../src/domain/services/driver.interface'
 import container from '../src/inversify.config'
 import TYPES from '../src/types'
 
-const addContext = require('mochawesome/addContext')
-const chai = require('chai')
+import addContext from 'mochawesome/addContext'
+import chai from 'chai'
 const expect = chai.expect
 
 
@@ -21,10 +19,9 @@ describe('Login', function () {
     it('should navigate to the Inventory page', async function () {
       const page = container.get(LoginPage)
 
-      await page.login('locked_out_user', 'secret_sauce')
-      await driver.instance().wait(until.urlContains('inventory.html'), 5000)
+      const inventoryPage = await page.login('performance_glitch_user', 'secret_sauce')
 
-      expect(await page.getTitle()).to.be.equal('PRODUCTS')
+      expect(await inventoryPage.isFullyLoaded(), 'Login failed').to.be.true
     })
   })
 
